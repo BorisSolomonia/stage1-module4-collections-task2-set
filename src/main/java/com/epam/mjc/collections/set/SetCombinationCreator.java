@@ -5,5 +5,13 @@ import java.util.Set;
 
 public class SetCombinationCreator {
     public Set<String> createSetCombination(Set<String> firstSet, Set<String> secondSet, Set<String> thirdSet) {
+        Set<String> oneTwo = firstSet;
+        oneTwo.retainAll(secondSet);
+        Set<String> thirdCopy = thirdSet;
+        thirdCopy.removeAll(oneTwo);
+        oneTwo.removeAll(thirdSet);
+        //oneTwo.addAll(thirdCopy);
+        return oneTwo;
+
     }
 }
